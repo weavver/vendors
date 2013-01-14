@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{01490A61-F803-41A3-89D4-D6CAC7A97DA6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Vendors</RootNamespace>
+    <AssemblyName>Weavver.Vendors</AssemblyName>
+    <TargetFrameworkVersion>v4.0.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CookComputing.XmlRpcV2">
+      <HintPath>..\3rd Party\CookComputing.XmlRpcV2.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\3rd Party\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.5.10.11092, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd Party\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="APC\MasterSwitch.cs" />
+    <Compile Include="Authorize .Net\AMIGateway.cs" />
+    <Compile Include="Authorize .Net\AMIGatewayResponse.cs" />
+    <Compile Include="Cisco\CiscoPhone.cs" />
+    <Compile Include="Cisco\CiscoPhoneDirectory.cs" />
+    <Compile Include="Cisco\CiscoPhoneDirectoryEntry.cs" />
+    <Compile Include="Cisco\CiscoPhoneDirectoryEntryCollection.cs" />
+    <Compile Include="CodeProject\Import.cs" />
+    <Compile Include="CouchDB\Changes.cs" />
+    <Compile Include="CouchDB\View.cs" />
+    <Compile Include="CouchDB\Views.cs" />
+    <Compile Include="Digium\Asterisk\AddContactRequest.cs" />
+    <Compile Include="Digium\Asterisk\AsteriskConnection.cs" />
+    <Compile Include="Digium\Asterisk\AsteriskPackets.cs" />
+    <Compile Include="Digium\Asterisk\Contact.cs" />
+    <Compile Include="Digium\Asterisk\ContactCollection.cs" />
+    <Compile Include="Digium\Asterisk\EventArgs.cs" />
+    <Compile Include="Digium\Asterisk\Group.cs" />
+    <Compile Include="Digium\Asterisk\GroupCollection.cs" />
+    <Compile Include="Digium\Asterisk\GroupMessage.cs" />
+    <Compile Include="Digium\Asterisk\InstantMessage.cs" />
+    <Compile Include="Digium\Asterisk\SipAccount.cs" />
+    <Compile Include="Digium\Asterisk\SipConfiguration.cs" />
+    <Compile Include="Digium\Asterisk\SipType.cs" />
+    <Compile Include="Digium\Asterisk\SipUserCollection.cs" />
+    <Compile Include="FreeSWITCH\BridgedCall.cs" />
+    <Compile Include="FreeSWITCH\EventSocket.cs" />
+    <Compile Include="FreeSWITCH\FreeSwitchConnection.cs" />
+    <Compile Include="FreeSWITCH\FreeSwitchEventSocket.cs" />
+    <Compile Include="FreeSWITCH\FreeSwitchPacket.cs" />
+    <Compile Include="Google\reCAPTCHA.cs" />
+    <Compile Include="iCall\DID.cs" />
+    <Compile Include="iCall\iCallAPI.cs" />
+    <Compile Include="iCall\NPA.cs" />
+    <Compile Include="Infralution\EncryptedLicense.cs" />
+    <Compile Include="Infralution\EncryptedLicenseProvider.cs" />
+    <Compile Include="MoxieCode\TinyMCE.cs" />
+    <Compile Include="MySQL\MySqlDatabase.cs" />
+    <Compile Include="Parallels\PleskRequest.cs" />
+    <Compile Include="PayPal\IPN.cs" />
+    <Compile Include="Process One\ejabberdRPC.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SoftwareIsHardWork\QifConvUtil.cs" />
+    <Compile Include="Twitter\Sync.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PayPal\Weavver.Vendors.PayPal.hbm.xml" />
+    <Content Include="Tigase\XMPP.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="JBilling\" />
+    <Folder Include="Polycom\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Weavver\Main\Projects\Net\Net.csproj">
+      <Project>{0D3C5390-5651-4B71-B165-E5C72A55281C}</Project>
+      <Name>Net</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

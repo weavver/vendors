@@ -1,0 +1,8 @@
+bin
+obj
+
+*.config
+*.suo
+*.snk
+*.user
+!src/App-default.config

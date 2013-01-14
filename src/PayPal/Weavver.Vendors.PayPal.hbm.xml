@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="WeavverLib" namespace="Weavver.Vendors.PayPal">
+     <class name="IPN" table="Vendors_PayPal_IPNs">
+          <id name="Id" column="Id" type="Guid" />
+          <property name="OrganizationId" column="OrganizationId" type="Guid" />
+          <property name="Txn_id" column="TxnId" type="string" />
+          <property name="Txn_type" column="TxnType" type="string" />
+          <property name="Receiver_email" column="ReceiverEmail" type="string" />
+          <property name="Item_name" column="ItemName" type="string" />
+          <property name="Item_number" column="ItemNumber" type="string" />
+          <property name="Quantity" column="Quantity" type="string" />
+          <property name="Invoice" column="Invoice" type="string" />
+          <property name="Custom" column="Custom" type="string" />
+          <property name="Payment_status" column="PaymentStatus" type="string" />
+          <property name="Pending_reason" column="PendingReason" type="string" />
+          <property name="Payment_date" column="PaymentDate" type="string" />
+          <property name="Payment_fee" column="PaymentFee" type="string" />
+          <property name="Payment_gross" column="PaymentGross" type="string" />
+          <property name="First_name" column="FirstName" type="string" />
+          <property name="Last_name" column="LastName" type="string" />
+          <property name="Address_street" column="AddressStreet" type="string" />
+          <property name="Address_city" column="AddressCity" type="string" />
+          <property name="Address_state" column="AddressState" type="string" />
+          <property name="Address_zip" column="AddressZip" type="string" />
+          <property name="Address_country" column="AddressCountry" type="string" />
+          <property name="Address_status" column="AddressStatus" type="string" />
+          <property name="Payer_email" column="PayerEmail" type="string" />
+          <property name="Payer_status" column="PayerStatus" type="string" />
+          <property name="Payment_type" column="PaymentType" type="string" />
+          <property name="Notify_version" column="NotifyVersion" type="string" />
+          <property name="Verify_sign" column="VerifySign" type="string" />
+          <property name="CreatedAt" column="CreatedAt" type="DateTime" />
+          <property name="CreatedBy" column="CreatedBy" type="Guid" />
+          <property name="UpdatedAt" column="UpdatedAt" type="DateTime" />
+          <property name="UpdatedBy" column="UpdatedBy" type="Guid" />
+     </class>
+</hibernate-mapping>
