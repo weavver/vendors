@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<project name="Weavver Vendors" default="rebuild">	
+	<property name="build.dir" value="build" />
+     <property name="debug" value="true"/>
+
+     <target name="clean">
+		<delete dir="${build.dir}" />
+     </target>
+
+     <target name="build" depends="weavver.vendors">
+     </target>
+
+     <target name="weavver.net">
+          <nant target="${target::get-current-target()}">
+               <buildfiles>
+                    <include name="vendors/weavver/net/nant.build" />
+               </buildfiles>
+          </nant>
+     </target>
+     
+	<target name="weavver.vendors" depends="weavver.net">
+          <mkdir dir="${build.dir}" />
+          <csc target="library" output="${build.dir}/Weavver.Vendors.dll" debug="${debug}">
+               <sources>
+				<include name="src/**.cs" />
+               </sources>
+               <references>
+			     <lib>
+				     <include name="vendors/**.dll" />
+				</lib>
+                    <include name="vendors/cookcomputing/CookComputing.XmlRpcV2.dll" />
+                    <include name="vendors/mysql/MySql.Data.dll" />
+                    <include name="vendors/nunit/nunit.framework.dll" />
+                    <include name="vendors/weavver/net/build/Weavver.Net.dll" />
+			</references>
+          </csc>
+     </target>
+
+     <target name="rebuild" depends="clean, build" />
+
+     <target name="run" depends="build">
+          <!--<exec program="${build.dir}/Weavver.Vendors.dll" />-->
+     </target>
+</project>
