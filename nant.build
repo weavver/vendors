@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<project name="Weavver Vendors" default="rebuild">	
-	<property name="build.dir" value="build" />
+<project name="Weavver Vendors" default="rebuild">
+     <property name="build.dir" value="build" unless="${property::exists('build.dir')}" />
      <property name="debug" value="true"/>
 
      <target name="clean">
