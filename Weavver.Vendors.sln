@@ -3,6 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weavver.Vendors", "src\Weavver.Vendors.csproj", "{01490A61-F803-41A3-89D4-D6CAC7A97DA6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{798AE360-7398-4454-811F-C72E74DF0C67}"
+	ProjectSection(SolutionItems) = preProject
+		nant.build = nant.build
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
