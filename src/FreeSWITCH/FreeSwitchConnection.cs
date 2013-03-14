@@ -8,12 +8,10 @@ using System.Net;
 using System.Threading;
 using System.Text.RegularExpressions;
 using System.IO;
-using NUnit.Framework;
 
 namespace Weavver.Vendors.FreeSWITCH
 {
 //-------------------------------------------------------------------------------------------
-     [TestFixture]
      public class FreeSwitchConnection
      {
           public Socket workSocket = null;
@@ -42,7 +40,8 @@ namespace Weavver.Vendors.FreeSWITCH
                FreeSwitchPassword = password;
                workSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                workSocket.Connect(host, port);
-               Assert.IsTrue(workSocket.Connected, "Could not connect to FreeSwitch.");
+               if (!workSocket.Connected)
+                    throw new Exception("Could not connect to FreeSwitch.");
                QueueRead();
           }
 //-------------------------------------------------------------------------------------------
@@ -128,7 +127,7 @@ namespace Weavver.Vendors.FreeSWITCH
                     }
                     Thread.Sleep(10);
                }
-               Assert.Fail("The expected message from FreeSwitch could not be found: " + packet);
+               throw new Exception("The expected message from FreeSwitch could not be found: " + packet);
                return null;
           }
 //-------------------------------------------------------------------------------------------

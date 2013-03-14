@@ -31,16 +31,18 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Weavver.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CookComputing.XmlRpcV2">
       <HintPath>..\vendors\cookcomputing\CookComputing.XmlRpcV2.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data">
       <HintPath>..\vendors\mysql\MySql.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.framework, Version=2.5.10.11092, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\3rd Party\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -104,9 +106,12 @@
     <Folder Include="Polycom\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\Weavver\Main\Projects\Net\Net.csproj">
+    <None Include="Weavver.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\net\src\Weavver.Net.csproj">
       <Project>{0D3C5390-5651-4B71-B165-E5C72A55281C}</Project>
-      <Name>Net</Name>
+      <Name>Weavver.Net</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
